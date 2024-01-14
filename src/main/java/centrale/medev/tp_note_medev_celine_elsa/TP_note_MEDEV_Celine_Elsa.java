@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package centrale.medev.testunitaire.tp_note_medev_celine_elsa;
+package centrale.medev.tp_note_medev_celine_elsa;
 
 /**
  *
