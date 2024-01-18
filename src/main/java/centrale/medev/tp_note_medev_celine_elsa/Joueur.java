@@ -40,21 +40,31 @@ class Joueur {
         Scanner sc2 = new Scanner(System.in);
         int y1 =sc2.nextInt();
         Point2D p1=new Point2D(x1,y1);
-        Bateau porteavion=new Bateau("porte-avion",5,p1,0,orientation,[])
+        Bateau porteavion=new Bateau("porte-avion",5,p1,0,orientation,[0,0,0,0,0]);
         
-        System.out.println("Choisissez l'abscisse de votre cuirassé");
+        System.out.println("Voulez-vous placer votre porte-avion horizontalement (0) ou verticalement (1) ?");
         Scanner sc3 = new Scanner(System.in);
-        int x2 =sc3.nextInt();
-        System.out.println("Choisissez l'ordonnée de votre porte-avions");
+        boolean orientation2 =sc3.nextBoolean();
+        System.out.println("Choisissez l'abscisse de votre cuirassé");
         Scanner sc4 = new Scanner(System.in);
-        int y2 =sc4.nextInt();
-        
-        System.out.println("Choisissez l'abscisse de votre destroyer");
+        int x2 =sc4.nextInt();
+        System.out.println("Choisissez l'ordonnée de votre cuirassé");
         Scanner sc5 = new Scanner(System.in);
-        int x3 =sc5.nextInt();
-        System.out.println("Choisissez l'ordonnée de votre destroyer");
+        int y2 =sc5.nextInt();
+        Point2D p2=new Point2D(x2,y2);
+        Bateau cuirasse=new Bateau("cuirassé",4,p2,0,orientation,[0,0,0,0]);
+        
+        System.out.println("Voulez-vous placer votre porte-avion horizontalement (0) ou verticalement (1) ?");
         Scanner sc6 = new Scanner(System.in);
-        int y3 =sc6.nextInt();
+        boolean orientation3 =sc6.nextBoolean();
+        System.out.println("Choisissez l'abscisse de votre destroyer");
+        Scanner sc7 = new Scanner(System.in);
+        int x3 =sc7.nextInt();
+        System.out.println("Choisissez l'ordonnée de votre destroyer");
+        Scanner sc8 = new Scanner(System.in);
+        int y3 =sc8.nextInt();
+        Point2D p3=new Point2D(x3,y3);
+        Bateau destroyer=new Bateau("destroyer",3,p3,0,orientation,[0,0,0]);
         
     }
     
