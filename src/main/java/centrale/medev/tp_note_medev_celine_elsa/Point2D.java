@@ -109,7 +109,7 @@ public class Point2D {
      * @param p
      * @return
      */
-    public boolean equals(Point2D p){
+    public boolean pointEquals(Point2D p){
         boolean b ; 
         b = this.x==p.x && this.y==p.y;
         return b;

@@ -124,15 +124,15 @@ public class Point2DTest {
      * Test of equals method, of class Point2D.
      */
     @Test
-    public void testEquals() {
+    public void testPointEquals() {
         System.out.println("equals");
         Point2D p = new Point2D(4,5);
         Point2D instance1 = new Point2D(2,3);
         Point2D instance2 = new Point2D(4,5);
         boolean expResult1 = false;
         boolean expResult2 = true;
-        boolean result1 = instance1.equals(p);
-        boolean result2 = instance2.equals(p);
+        boolean result1 = instance1.pointEquals(p);
+        boolean result2 = instance2.pointEquals(p);
         assertEquals(expResult1, result1);
         assertEquals(expResult2, result2);
     }
