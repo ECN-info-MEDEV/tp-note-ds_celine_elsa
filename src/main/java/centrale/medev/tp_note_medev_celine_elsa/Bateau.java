@@ -85,13 +85,16 @@ class Bateau {
     }
     
     public boolean verifCoule(){
-        boolean coule=true;
+        boolean coule2=true;
         for (boolean b : etat){
-            if (b= false){
-                coule=false;
+            if (b==false){
+                coule2=false;
             }
         }
-        return coule;
+        if (coule2==true){
+            this.coule=true;
+        }
+        return coule2;
     }
     
     
