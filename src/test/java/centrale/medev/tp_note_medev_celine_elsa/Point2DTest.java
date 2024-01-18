@@ -115,8 +115,9 @@ public class Point2DTest {
         int y = 4;
         Point2D instance = new Point2D(2,3);
         instance.setPosition(x, y);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Point2D result = new Point2D(5,4);
+        assertEquals(result.getY(), instance.getY());
+        assertEquals(result.getY(), instance.getY());
     }
 
     /**
