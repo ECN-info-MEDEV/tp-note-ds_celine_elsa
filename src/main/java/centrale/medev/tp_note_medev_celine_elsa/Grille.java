@@ -168,11 +168,11 @@ public class Grille {
    
     
     /**
-     * Permet d'afficher la grille du joueur pour lui
+     * Permet d'afficher la grille du joueur pour lui, voir l'avancement de 
+     * son opposant
      */
     public void afficheGrilleJoueur() {
-        grilleJoueur = new String[longueur][largeur];
-
+       
         Point2D origine = new Point2D(0, 0);
 
         for (int i = 0; i <= longueur; i++) {
@@ -200,6 +200,49 @@ public class Grille {
                 }
             }
         }
+        for (int i = longueur; i > 0; i--) {
+            System.out.println();
+            for (int k = 0; k < largeur; k++) {
+                System.out.print(" " + (grilleJoueur[k][i]) + " ");
+            }
+
+        }
+        System.out.println("");
+
+    }
+    /**
+     * Permet d'afficher la grille du joueur pour son opposant, voir les 
+     * touches et les tirs dèjà effectués
+     */
+    public void afficheGrilleOpposant() {
+        grilleOpposant = new String[longueur][largeur];
+
+        Point2D origine = new Point2D(0, 0);
+
+        for (int i = 0; i <= longueur; i++) {
+            for (int k = 0; k <= largeur; k++) {
+                grilleJoueur[i][k] = "-";
+            }
+        }
+
+        for (Point2D tir : tirsRecus ){
+            grilleJoueur[tir.getX()][tir.getY()]="x";
+        }
+        
+        for (Bateau bateau : bateaux) {
+            Point2D posB = bateau.getOrigine();
+            for (int i=0; i<bateau.getTaille(); i++) {
+                
+                if (bateau.getEtat()[i]==true){
+                    
+                    if (bateau.isOrientation() == false) {
+                        grilleJoueur[posB.getX() + i][posB.getY()] = "T";
+                    }
+                    else if (bateau.isOrientation() == true) {
+                        grilleJoueur[posB.getX()][posB.getY() + i] = "T";
+                    }
+            }
+        }
 
         
         for (int i = longueur; i > 0; i--) {
@@ -212,5 +255,5 @@ public class Grille {
         System.out.println("");
 
     }
-
+}
 }
