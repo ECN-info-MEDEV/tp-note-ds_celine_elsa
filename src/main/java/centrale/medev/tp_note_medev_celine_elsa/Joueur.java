@@ -59,7 +59,7 @@ class Joueur {
         }}
         
         Point2D p1=new Point2D(x1,y1);
-        Bateau porteavion=new Bateau("porte-avion",5,p1,false,orientation,new boolean[]{false, false, false, false, false});
+        Bateau porteavion=new Bateau("porte-avion","PA",5,p1,false,orientation,new boolean[]{false, false, false, false, false});
         this.grille.getBateaux().add(porteavion);
         
         
@@ -85,7 +85,7 @@ class Joueur {
             bienplace=true;
         }}
         Point2D p2=new Point2D(x2,y2);
-        Bateau cuirasse=new Bateau("cuirassé",4,p2,false,orientation2,new boolean[]{false, false, false, false});
+        Bateau cuirasse=new Bateau("cuirassé","CU",4,p2,false,orientation2,new boolean[]{false, false, false, false});
         this.grille.getBateaux().add(cuirasse);
         
         
@@ -111,7 +111,7 @@ class Joueur {
         if((y3>0)&&(((orientation==true)&&(y3+3<longueurgrille))||(orientation==false))){
             bienplace=true;}}
         Point2D p3=new Point2D(x3,y3);
-        Bateau destroyer=new Bateau("destroyer",3,p3,false,orientation3,new boolean[]{false, false, false});
+        Bateau destroyer=new Bateau("destroyer","DE",3,p3,false,orientation3,new boolean[]{false, false, false});
         this.grille.getBateaux().add(destroyer);
         
     }
