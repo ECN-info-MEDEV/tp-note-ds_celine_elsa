@@ -7,7 +7,7 @@ package centrale.medev.tp_note_medev_celine_elsa;
 import java.util.ArrayList;
 
 /**
- *
+ * Permet de paramétrer les grilles de jeu des joueurs 
  * @author Céline
  */
 public class Grille {
@@ -19,6 +19,16 @@ public class Grille {
     private String[][] grilleJoueur;
     private String[][] grilleOpposant;
 
+    /**
+     * Constructeur à paramètres
+     * @param longueur de la grille
+     * @param largeur de la grille  (on aurait pu faire juste tailel si on considère la grille forcément carrée)
+     * @param bateaux liste des bateaux se trouvant sur la grille
+     * @param joueur joueur à qui appartient les bateux sur la grille 
+     * @param tirsRecus liste des tirs reçus par le joueur
+     * @param grilleJoueur grille vue par le joueur
+     * @param grilleOpposant grille vue par son opposant
+     */
     public Grille(int longueur, int largeur, ArrayList<Bateau> bateaux, Joueur joueur,ArrayList<Point2D> tirsRecus, String[][] grilleJoueur, String[][] grilleOpposant) {
         this.longueur = longueur;
         this.largeur = largeur;
@@ -29,6 +39,10 @@ public class Grille {
         this.tirsRecus = new ArrayList(tirsRecus);
     }
     
+    /**
+     * Constructeur de recopie
+     * @param g
+     */
     public Grille(Grille g) {
         this.longueur = g.longueur;
         this.largeur = g.largeur;
@@ -39,144 +53,161 @@ public class Grille {
         this.tirsRecus = new ArrayList(g.tirsRecus);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getLongueur() {
         return longueur;
     }
 
+    /**
+     *
+     * @param longueur
+     */
     public void setLongueur(int longueur) {
         this.longueur = longueur;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getLargeur() {
         return largeur;
     }
 
+    /**
+     *
+     * @param largeur
+     */
     public void setLargeur(int largeur) {
         this.largeur = largeur;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Bateau> getBateaux() {
         return bateaux;
     }
 
+    /**
+     *
+     * @param bateaux
+     */
     public void setBateaux(ArrayList<Bateau> bateaux) {
         this.bateaux = bateaux;
     }
 
+    /**
+     *
+     * @return
+     */
     public Joueur getJoueur() {
         return joueur;
     }
 
+    /**
+     *
+     * @param joueur
+     */
     public void setJoueur(Joueur joueur) {
         this.joueur = joueur;
     }
 
+    /**
+     *
+     * @return
+     */
     public String[][] getGrilleJoueur() {
         return grilleJoueur;
     }
 
+    /**
+     *
+     * @param grilleJoueur
+     */
     public void setGrilleJoueur(String[][] grilleJoueur) {
         this.grilleJoueur = grilleJoueur;
     }
 
+    /**
+     *
+     * @return
+     */
     public String[][] getGrilleOpposant() {
         return grilleOpposant;
     }
 
+    /**
+     *
+     * @param grilleOpposant
+     */
     public void setGrilleOpposant(String[][] grilleOpposant) {
         this.grilleOpposant = grilleOpposant;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Point2D> getTirsRecus() {
         return tirsRecus;
     }
 
+    /**
+     *
+     * @param tirsRecus
+     */
     public void setTirsRecus(ArrayList<Point2D> tirsRecus) {
         this.tirsRecus = tirsRecus;
     }
 
-    public int getLongueur() {
-        return longueur;
-    }
-
-    public int getLargeur() {
-        return largeur;
-    }
-
-    public ArrayList<Bateau> getBateaux() {
-        return bateaux;
-    }
-
-    public Joueur getJoueur() {
-        return joueur;
-    }
-
-    public String[][] getGrilleJoueur() {
-        return grilleJoueur;
-    }
-
-    public String[][] getGrilleOpposant() {
-        return grilleOpposant;
-    }
-
-    public void setLongueur(int longueur) {
-        this.longueur = longueur;
-    }
-
-    public void setLargeur(int largeur) {
-        this.largeur = largeur;
-    }
-
-    public void setBateaux(ArrayList<Bateau> bateaux) {
-        this.bateaux = bateaux;
-    }
-
-    public void setJoueur(Joueur joueur) {
-        this.joueur = joueur;
-    }
-
-    public void setGrilleJoueur(String[][] grilleJoueur) {
-        this.grilleJoueur = grilleJoueur;
-    }
-
-    public void setGrilleOpposant(String[][] grilleOpposant) {
-        this.grilleOpposant = grilleOpposant;
-    }
+   
     
-    
-    
-    
-    
+    /**
+     * Permet d'afficher la grille du joueur pour lui
+     */
     public void afficheGrilleJoueur() {
         grilleJoueur = new String[longueur][largeur];
-        
-        Point2D origine = new Point2D(0,0);
-        
-        for (int i=0; i<=longueur;i++){
-            for (int k=0; k<=largeur;k++){
-                    grilleJoueur[i][k] = "-";
-              
+
+        Point2D origine = new Point2D(0, 0);
+
+        for (int i = 0; i <= longueur; i++) {
+            for (int k = 0; k <= largeur; k++) {
+                grilleJoueur[i][k] = "-";
+            }
+        }
+
+        for (Point2D tir : tirsRecus ){
+            grilleJoueur[tir.getX()][tir.getY()]="x";
         }
         
         for (Bateau bateau : bateaux) {
-            Point2D posB =bateau.getOrigine();
-            for (int i=0, i<bateau.getLongueur(),i++){
-                if (bateau.isOrientation()==false){
-                    grilleJoueur[posB.getX()+i][posB.getY()] = bateau.getInitiale(); 
+            Point2D posB = bateau.getOrigine();
+            for (int i=0; i<bateau.getTaille(); i++) {
+                String iconeGrille = bateau.getInitiale();
+                if (bateau.getEtat()[i]==true){
+                    iconeGrille="T"; //bateau touché (=T)
                 }
-                if (bateau.isOrientation()==true){
-                    grilleJoueur[posB.getX()][posB.getY()+i] = bateau.getInitiale(); 
+                if (bateau.isOrientation() == false) {
+                    grilleJoueur[posB.getX() + i][posB.getY()] = iconeGrille;
                 }
-             }
-        }
-        
-        }
-        for (int i=longueur ; i>0;i--){
-            System.out.println();
-            for (int k=0; k< largeur;k++){
-                System.out.print(" "+(grilleJoueur[k][i])+" ");
+                if (bateau.isOrientation() == true) {
+                    grilleJoueur[posB.getX()][posB.getY() + i] = iconeGrille;
+                }
             }
-            
+        }
+
+        
+        for (int i = longueur; i > 0; i--) {
+            System.out.println();
+            for (int k = 0; k < largeur; k++) {
+                System.out.print(" " + (grilleJoueur[k][i]) + " ");
+            }
+
         }
         System.out.println("");
 
