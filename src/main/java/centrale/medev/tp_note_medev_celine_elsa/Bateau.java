@@ -12,13 +12,14 @@ import java.util.ArrayList;
  */
 class Bateau {
     private String nom;
+    private String initiale;
     private int taille;
     private Point2D origine; 
     private boolean coule; //vie=0
     private boolean orientation; //horizontal=0
     private boolean[] etat;
 
-    public Bateau(String nom, int taille, Point2D origine, boolean coule, boolean orientation, boolean[] etat) {
+    public Bateau(String nom,String initiale, int taille, Point2D origine, boolean coule, boolean orientation, boolean[] etat) {
         this.nom = nom;
         this.taille = taille;
         this.origine = origine;
@@ -74,6 +75,15 @@ class Bateau {
     public void setEtat(boolean[] etat) {
         this.etat = etat;
     }
+
+    public String getInitiale() {
+        return initiale;
+    }
+
+    public void setInitiale(String initiale) {
+        this.initiale = initiale;
+    }
+    
     
     
     
