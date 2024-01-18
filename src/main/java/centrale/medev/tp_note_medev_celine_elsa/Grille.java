@@ -35,5 +35,56 @@ public class Grille {
         this.grilleJoueur = g.grilleJoueur;
         this.grilleOpposant = g.grilleOpposant;
     }
+
+    public int getLongueur() {
+        return longueur;
+    }
+
+    public int getLargeur() {
+        return largeur;
+    }
+
+    public ArrayList<Bateau> getBateaux() {
+        return bateaux;
+    }
+
+    public Joueur getJoueur() {
+        return joueur;
+    }
+
+    public String[][] getGrilleJoueur() {
+        return grilleJoueur;
+    }
+
+    public String[][] getGrilleOpposant() {
+        return grilleOpposant;
+    }
+
+    public void setLongueur(int longueur) {
+        this.longueur = longueur;
+    }
+
+    public void setLargeur(int largeur) {
+        this.largeur = largeur;
+    }
+
+    public void setBateaux(ArrayList<Bateau> bateaux) {
+        this.bateaux = bateaux;
+    }
+
+    public void setJoueur(Joueur joueur) {
+        this.joueur = joueur;
+    }
+
+    public void setGrilleJoueur(String[][] grilleJoueur) {
+        this.grilleJoueur = grilleJoueur;
+    }
+
+    public void setGrilleOpposant(String[][] grilleOpposant) {
+        this.grilleOpposant = grilleOpposant;
+    }
+    
+    
+    
     
 }
