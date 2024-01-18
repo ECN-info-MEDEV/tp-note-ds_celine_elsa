@@ -17,7 +17,24 @@ public class Grille {
     private Joueur joueur;
     private String[][] grilleJoueur;
     private String[][] grilleOpposant;
+
+    public Grille(int longueur, int largeur, ArrayList<Bateau> bateaux, Joueur joueur, String[][] grilleJoueur, String[][] grilleOpposant) {
+        this.longueur = longueur;
+        this.largeur = largeur;
+        this.bateaux = new ArrayList<Bateau>(bateaux);
+        this.joueur = new Joueur(joueur);
+        this.grilleJoueur = grilleJoueur;
+        this.grilleOpposant = grilleOpposant;
+    }
     
+    public Grille(Grille g) {
+        this.longueur = g.longueur;
+        this.largeur = g.largeur;
+        this.bateaux = new ArrayList<Bateau>(g.bateaux);
+        this.joueur = new Joueur(g.joueur);
+        this.grilleJoueur = g.grilleJoueur;
+        this.grilleOpposant = g.grilleOpposant;
+    }
     
     
     public void afficheGrilleJoueur() {
