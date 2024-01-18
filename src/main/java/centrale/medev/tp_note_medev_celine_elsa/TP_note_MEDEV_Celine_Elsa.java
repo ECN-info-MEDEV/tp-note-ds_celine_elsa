@@ -47,12 +47,7 @@ public class TP_note_MEDEV_Celine_Elsa {
         }
         
         //Fin de partie
-        if(j1.getNbbateau()==0){
-            System.out.println("Le joueur 2 a gagné !");
-        }
-        if(j2.getNbbateau()==0){
-            System.out.println("Le joueur 1 a gagné !");
-        }
+        partie.finDeJeu();
         
     }
 }

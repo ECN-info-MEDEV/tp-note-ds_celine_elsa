@@ -7,7 +7,7 @@ package centrale.medev.tp_note_medev_celine_elsa;
 import java.util.ArrayList;
 
 /**
- *
+ *Classe permettant de créer un bateau et de gérer son état
  * @author Céline
  */
 class Bateau {
