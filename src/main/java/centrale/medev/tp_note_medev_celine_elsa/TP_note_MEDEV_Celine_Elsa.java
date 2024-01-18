@@ -38,8 +38,8 @@ public class TP_note_MEDEV_Celine_Elsa {
         
         //Initialiser partie
         Partie partie=new Partie(j1,j2);
-        j1.placeBateau();
-        j2.placeBateau();
+        partie.initJeu();
+        
         
         //Condition d'arrêt du jeu
         while ((j1.getNbbateau()!=0)&&(j2.getNbbateau()!=0)){
