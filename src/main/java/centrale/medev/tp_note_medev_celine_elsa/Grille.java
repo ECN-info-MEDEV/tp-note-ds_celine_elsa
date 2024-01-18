@@ -14,7 +14,6 @@ public class Grille {
     private int longueur;
     private int largeur;
     private ArrayList<Bateau> bateaux;
-    private Joueur joueur;
     private ArrayList<Point2D> tirsRecus;
     private String[][] grilleJoueur;
     private String[][] grilleOpposant;
@@ -29,11 +28,10 @@ public class Grille {
      * @param grilleJoueur grille vue par le joueur
      * @param grilleOpposant grille vue par son opposant
      */
-    public Grille(int longueur, int largeur, ArrayList<Bateau> bateaux, Joueur joueur,ArrayList<Point2D> tirsRecus, String[][] grilleJoueur, String[][] grilleOpposant) {
+    public Grille(int longueur, int largeur, ArrayList<Bateau> bateaux, ArrayList<Point2D> tirsRecus, String[][] grilleJoueur, String[][] grilleOpposant) {
         this.longueur = longueur;
         this.largeur = largeur;
         this.bateaux = new ArrayList<>(bateaux);
-        this.joueur = new Joueur(joueur);
         this.grilleJoueur = grilleJoueur;
         this.grilleOpposant = grilleOpposant;
         this.tirsRecus = new ArrayList(tirsRecus);
@@ -47,10 +45,21 @@ public class Grille {
         this.longueur = g.longueur;
         this.largeur = g.largeur;
         this.bateaux = new ArrayList<>(g.bateaux);
-        this.joueur = new Joueur(g.joueur);
         this.grilleJoueur = g.grilleJoueur;
         this.grilleOpposant = g.grilleOpposant;
         this.tirsRecus = new ArrayList(g.tirsRecus);
+    }
+    
+    /**
+     * Constructeur de grille à partir de la taille
+     */
+    public Grille(int longueur, int largeur) {  
+        this.longueur = longueur;
+        this.largeur = largeur;
+        this.bateaux = new ArrayList<>();
+        this.grilleJoueur = new String[longueur][largeur];
+        this.grilleOpposant = new String[longueur][largeur];
+        this.tirsRecus = new ArrayList();
     }
 
     /**
@@ -99,22 +108,6 @@ public class Grille {
      */
     public void setBateaux(ArrayList<Bateau> bateaux) {
         this.bateaux = bateaux;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public Joueur getJoueur() {
-        return joueur;
-    }
-
-    /**
-     *
-     * @param joueur
-     */
-    public void setJoueur(Joueur joueur) {
-        this.joueur = joueur;
     }
 
     /**
