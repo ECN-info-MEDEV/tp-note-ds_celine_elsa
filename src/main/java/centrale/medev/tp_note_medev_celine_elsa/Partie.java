@@ -11,7 +11,22 @@ package centrale.medev.tp_note_medev_celine_elsa;
 public class Partie {
     private Joueur joueur1;
     private Joueur joueur2;
-    private Grille grilleJ1;
-    private Grille grillej2;
+
+    public Partie(Joueur joueur1, Joueur joueur2) {
+        this.joueur1 = joueur1;
+        this.joueur2 = joueur2;
+    }
+    
+    public void tourDeJeu(){
+        joueur1.getGrille().afficheGrilleJoueur();
+        joueur1.tir(joueur2);
+        joueur2.getGrille().afficheGrilleJoueur();
+        joueur2.tir(joueur1);
+        
+        
+        
+    }
+    
+    
     
 }

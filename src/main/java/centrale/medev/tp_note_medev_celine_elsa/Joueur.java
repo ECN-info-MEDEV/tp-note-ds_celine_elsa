@@ -26,6 +26,32 @@ class Joueur {
         this.grille = new Grille(j.grille);
         this.nbbateau = j.nbbateau;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public Grille getGrille() {
+        return grille;
+    }
+
+    public int getNbbateau() {
+        return nbbateau;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setGrille(Grille grille) {
+        this.grille = grille;
+    }
+
+    public void setNbbateau(int nbbateau) {
+        this.nbbateau = nbbateau;
+    }
+    
+    
     
     //FIXME Vérifier que le bateau ne va pas superposer un autre bateau
     public void placeBateau(){

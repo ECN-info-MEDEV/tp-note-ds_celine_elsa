@@ -31,17 +31,27 @@ public class TP_note_MEDEV_Celine_Elsa {
         //créer grille
         Grille grillej1=new Grille(longueur, largeur);
         Grille grillej2=new Grille(longueur, largeur);
+        
         //créer joueurs
         Joueur j1=new Joueur(nom1,grillej1,3);
         Joueur j2=new Joueur(nom2,grillej2,3);
-        //Tours de jeu
-        System.out.println("Sélectionner le nombre de tours de jeu que vous souhaitez faire");
-        Scanner sc5 = new Scanner(System.in);
-        int nbTours =sc.nextInt();
         
-      
-        for (int i=0;i<nbTours;i++){
+        //Initialiser partie
+        Partie partie=new Partie(j1,j2);
+        j1.placeBateau();
+        j2.placeBateau();
+        
+        //Condition d'arrêt du jeu
+        while ((j1.getNbbateau()!=0)&&(j2.getNbbateau()!=0)){
             partie.tourDeJeu();
+        }
+        
+        //Fin de partie
+        if(j1.getNbbateau()==0){
+            System.out.println("Le joueur 2 a gagné !");
+        }
+        if(j2.getNbbateau()==0){
+            System.out.println("Le joueur 1 a gagné !");
         }
         
     }
