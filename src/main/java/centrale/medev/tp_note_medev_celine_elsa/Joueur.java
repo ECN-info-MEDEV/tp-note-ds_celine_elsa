@@ -74,7 +74,7 @@ class Joueur {
         System.out.println("Choisissez l'abscisse de l'origine de votre porte-avions");
         Scanner sc = new Scanner(System.in);
         x1 =sc.nextInt();
-        if((x1>0)&&(((orientation==false)&&(x1+5<longueurgrille))||(orientation==true))){
+        if((x1>=0)&&(x1<=longueurgrille)&&(((orientation==false)&&(x1+5<=longueurgrille))||(orientation==true))){
             bienplace=true;
         }
     }
@@ -83,7 +83,7 @@ class Joueur {
         System.out.println("Choisissez l'ordonnée de l'origine de votre porte-avions");
         Scanner sc2 = new Scanner(System.in);
         y1 =sc2.nextInt();
-        if((y1>0)&&(((orientation==true)&&(y1+5<longueurgrille))||(orientation==false))){
+        if((y1>=0)&&(y1<=largeurgrille)&&(((orientation==true)&&(y1+5<=largeurgrille))||(orientation==false))){
             bienplace=true;
         }}
         
@@ -102,7 +102,7 @@ class Joueur {
         System.out.println("Choisissez l'abscisse de votre cuirassé");
         Scanner sc4 = new Scanner(System.in);
         x2 =sc4.nextInt();
-        if((x2>0)&&(((orientation==false)&&(x2+4<longueurgrille))||(orientation==true))){
+        if((x2>=0)&&(x2<=longueurgrille)&&(((orientation==false)&&(x2+4<=longueurgrille))||(orientation==true))){
             bienplace=true;}}
         
         bienplace=false;
@@ -110,7 +110,7 @@ class Joueur {
         System.out.println("Choisissez l'ordonnée de votre cuirassé");
         Scanner sc5 = new Scanner(System.in);
         y2 =sc5.nextInt();
-        if((y2>0)&&(((orientation==true)&&(y2+4<longueurgrille))||(orientation==false))){
+        if((y2>=0)&&(y2<=largeurgrille)&&(((orientation==true)&&(y2+4<=largeurgrille))||(orientation==false))){
             bienplace=true;
         }}
         Point2D p2=new Point2D(x2,y2);
@@ -128,7 +128,7 @@ class Joueur {
         System.out.println("Choisissez l'abscisse de votre destroyer");
         Scanner sc7 = new Scanner(System.in);
         x3 =sc7.nextInt();
-        if((x3>0)&&(((orientation==false)&&(x3+3<longueurgrille))||(orientation==true))){
+        if((x3>=0)&&(x3<=longueurgrille)&&(((orientation==false)&&(x3+3<=longueurgrille))||(orientation==true))){
             bienplace=true;}}
        
         
@@ -137,7 +137,7 @@ class Joueur {
         System.out.println("Choisissez l'ordonnée de votre destroyer");
         Scanner sc8 = new Scanner(System.in);
         y3 =sc8.nextInt();
-        if((y3>0)&&(((orientation==true)&&(y3+3<longueurgrille))||(orientation==false))){
+        if((y3>=0)&&(y3<=largeurgrille)&&(((orientation==true)&&(y3+3<=largeurgrille))||(orientation==false))){
             bienplace=true;}}
         Point2D p3=new Point2D(x3,y3);
         Bateau destroyer=new Bateau("destroyer","DE",3,p3,false,orientation3,new boolean[]{false, false, false});

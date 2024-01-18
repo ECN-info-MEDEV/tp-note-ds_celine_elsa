@@ -23,6 +23,16 @@ public class Partie {
     }
     
     /**
+     * Méthode permettant d'initialiser la partie
+     */
+    public void initJeu(){
+        System.out.println("Au joueur 1 de placer ses bateaux.");
+        this.joueur1.placeBateau();
+        System.out.println("Au joueur 2 de placer ses bateaux.");
+        this.joueur2.placeBateau();
+    }
+    
+    /**
      *Méthode permettant de faire un tour de jeu (chacun à son tour, un joueur voit sa grille et tir)
      */
     public void tourDeJeu(){
