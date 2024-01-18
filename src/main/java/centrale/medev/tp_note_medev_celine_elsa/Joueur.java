@@ -7,7 +7,7 @@ package centrale.medev.tp_note_medev_celine_elsa;
 import java.util.Scanner;
 
 /**
- *
+ *Classe permettant de créer et faire jouer un joueur
  * @author Céline
  */
 class Joueur {
@@ -53,6 +53,10 @@ class Joueur {
     
     
     //FIXME Vérifier que le bateau ne va pas superposer un autre bateau
+    /**
+     * Méthode permettant au joueur de placer ses bateaux (en vérifiant qu'ils ne sortent pas de la grille)
+     * et de les ajouter à sa liste de bateaux
+     */
     public void placeBateau(){
         int longueurgrille=this.grille.getLongueur();
         int largeurgrille=this.grille.getLargeur();
