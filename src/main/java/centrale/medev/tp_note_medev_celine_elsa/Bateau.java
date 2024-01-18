@@ -84,6 +84,15 @@ class Bateau {
         this.initiale = initiale;
     }
     
+    public boolean verifCoule(){
+        boolean coule=true;
+        for (boolean b : etat){
+            if (b= false){
+                coule=false;
+            }
+        }
+        return coule;
+    }
     
     
     

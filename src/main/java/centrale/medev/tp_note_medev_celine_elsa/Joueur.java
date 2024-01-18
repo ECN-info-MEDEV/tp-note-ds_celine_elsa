@@ -26,6 +26,31 @@ class Joueur {
         this.grille = new Grille(j.grille);
         this.nbbateau = j.nbbateau;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Grille getGrille() {
+        return grille;
+    }
+
+    public void setGrille(Grille grille) {
+        this.grille = grille;
+    }
+
+    public int getNbbateau() {
+        return nbbateau;
+    }
+
+    public void setNbbateau(int nbbateau) {
+        this.nbbateau = nbbateau;
+    }
+    
     
     //FIXME Vérifier que le bateau ne va pas superposer un autre bateau
     public void placeBateau(){
@@ -116,4 +141,28 @@ class Joueur {
         
     }
     
+    void tir(Joueur opposant){
+        
+        Grille grilleOpp = opposant.getGrille();
+        int x;
+        int y;
+        do{
+        System.out.println("Vous allez pouvoir tirer sur votre adversaire");
+        grilleOpp.afficheGrilleOpposant();
+        
+        
+        System.out.println("Choisissez l'ordonnée de l'origine de votre tir");
+        Scanner scA = new Scanner(System.in);
+        x =scA.nextInt();
+        
+        
+        System.out.println("Choisissez l'abscisse de l'origine de votre tir");
+        Scanner scO = new Scanner(System.in);
+        y =scO.nextInt();
+        }while(x>grille.getLargeur()||y>grille.getLongueur()||x<0||y<0);
+        
+        Point2D tir =new Point2D(x,y);
+        
+        grille.getTirsRecus().add(tir);
+    }
 }

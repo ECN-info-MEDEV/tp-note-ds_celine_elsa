@@ -256,4 +256,29 @@ public class Grille {
 
     }
 }
+    public void resultTir(Point2D tir){
+        int x=tir.getX();
+        int y=tir.getY();
+        
+        for (Bateau bateau : bateaux){
+            for (int i=0; i<bateau.getTaille(); i++) {
+                if (bateau.isOrientation() == false) {
+                    if ((bateau.getOrigine().getX()+i==x)&&(bateau.getOrigine().getY()==y)){
+                        System.out.println("Touché !");
+                        bateau.getEtat()[i]=true;
+                        if (bateau.verifCoule()){
+                            System.out.println("Coulé");
+                        }
+                    }
+                    else if ((bateau.getOrigine().getX()==x)&&(bateau.getOrigine().getY()+i==y)){
+                        System.out.println("Touché !");
+                        bateau.getEtat()[i]=true;
+                        if (bateau.verifCoule()){
+                            System.out.println("Coulé");
+                        }
+                    } 
+                }
+            }
+        }
+    }
 }
