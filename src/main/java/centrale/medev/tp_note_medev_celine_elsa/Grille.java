@@ -23,7 +23,6 @@ public class Grille {
      * @param longueur de la grille
      * @param largeur de la grille  (on aurait pu faire juste tailel si on considère la grille forcément carrée)
      * @param bateaux liste des bateaux se trouvant sur la grille
-     * @param joueur joueur à qui appartient les bateux sur la grille 
      * @param tirsRecus liste des tirs reçus par le joueur
      * @param grilleJoueur grille vue par le joueur
      * @param grilleOpposant grille vue par son opposant
